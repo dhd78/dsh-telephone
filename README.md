@@ -4,7 +4,15 @@
 
 > 传输层基于 [dsh-session-bus](https://github.com/donyue7/dsh-session-bus) 0.4.0（MIT，见 `THIRD_PARTY_NOTICES.md`）；电话页、专线计数、配额、挂断与协议是本插件新增。
 
+> ⚠️ **重要：本版本不提供 AI 间邮箱系统。** 电话只负责叫醒；任务正文、文件、验收需要用户自己搭建「信箱」（例如共享目录、自建消息系统或其他插件）。**没有信箱时，电话只能叫醒对方，不能传递任务内容。**
+
 仓库：<https://github.com/dhd78/dsh-telephone>
+
+## 重要：本版本没有内置邮箱系统
+
+本插件只提供「电话 / 专线 / 配额 / 挂断」，**不提供会话之间的收件箱、附件、消息存储或投递系统**。README 里说的「任务正文走信箱」，指的是用户已有的信箱约定，不是本插件内置功能。
+
+使用前请先准备一个信箱（共享文件夹、自己的消息系统、其他插件都可以）；否则电话只能叫醒目标，不能把任务内容送过去。
 
 ## AI 参与声明
 
@@ -49,6 +57,8 @@
 ## English
 
 `dsh-telephone` is a switchboard for DeepSeek Harness sessions. The owner draws which sessions may call each other and grants "new line" quotas; an agent can then wake another session with a short call (≤100 characters), while task details travel through the existing mailbox. Calls are wake-up only; a line has a max call count and closes after 60 minutes of inactivity. Transport is derived from `dsh-session-bus` 0.4.0 (MIT). No network access; state stays local under `%DSH_HOME%/telephone/`.
+
+**Important: this version does NOT ship an AI-to-AI mailbox.** Calls only wake the target. Users must provide their own mailbox (shared folder, their own message system, or another plugin); without one, a call can only wake the peer, not deliver task details.
 
 ## 兼容性
 
