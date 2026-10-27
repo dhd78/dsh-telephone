@@ -8,6 +8,8 @@
 
 仓库：<https://github.com/dhd78/dsh-telephone>
 
+> 当前只通过 GitHub Release 分发，**暂未发布 npm**；安装见下面「安装（GitHub Release）」。
+
 ## 重要：本版本没有内置邮箱系统
 
 本插件只提供「电话 / 专线 / 配额 / 挂断」，**不提供会话之间的收件箱、附件、消息存储或投递系统**。README 里说的「任务正文走信箱」，指的是用户已有的信箱约定，不是本插件内置功能。
@@ -67,14 +69,17 @@
 - 平台：Web UI（DSH 桌面端内置）
 - 传输层：`dsh-session-bus` 0.4.0 的派生代码随包分发，无需另行安装
 
-## 安装
+## 安装（GitHub Release）
 
-### 新用户（npm 包或发布包）
+本版本只通过 **GitHub Release** 分发，暂不发布 npm。
 
-1. 用插件管理器 `install_bundle` 指向 npm 包名 `dsh-telephone`，或解压发布包后指向目录；
-2. 按提示 `pnpm install`（本包没有运行时 npm 依赖）；
-3. 重启 DSH；
-4. 刷新页面，打开「设置 → 插件 → 电话」，按下面步骤画线。
+1. 打开本仓库的 Releases，下载 `dsh-telephone-v0.1.7.zip` 和 `SHA256SUMS`；
+2. 用 `SHA256SUMS` 核对 zip 的 SHA-256；
+3. 解压，得到 `dsh-telephone-v0.1.7/` 目录；
+4. 用 DSH 插件管理器 `install_bundle` 指向该目录；
+5. 按提示执行 `pnpm install`（本包没有运行时 npm 依赖）；
+6. 重启 DSH；
+7. 刷新页面，打开「设置 → 插件 → 电话」，按下面步骤画线。
 
 ## 规则
 
