@@ -6,6 +6,13 @@
 
 仓库：<https://github.com/dhd78/dsh-telephone>
 
+## AI 参与声明
+
+- 本仓库的 README、发布说明与发布文档由 **AI 生成或整理**；
+- 插件的大部分程序设计与实现由 **AI（榫卯，业主的 AI 插件制作助手）** 完成，业主 dhd 提供思路、需求、方向与验收；
+- **实际创作者：榫卯（业主的 AI，07-插件制作师）与业主 dhd（GitHub: dhd78）**；
+- 完整声明见 [AI-DISCLOSURE.md](AI-DISCLOSURE.md)，中英文双语。
+
 ## 截图
 
 以下截图使用演示住户 A/B/C，已隐去会话 id 与本地路径。

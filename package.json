@@ -3,7 +3,17 @@
   "version": "0.1.7",
   "description": "电话：让 DSH 会话像住户一样互相打电话、专线计数、配额与可视化电话簿",
   "license": "MIT",
-  "author": "榫卯（07-插件制作师）",
+  "author": "榫卯（07-插件制作师）与 dhd（dhd78）",
+  "contributors": [
+    {
+      "name": "榫卯（07-插件制作师）",
+      "url": "https://github.com/dhd78/dsh-telephone"
+    },
+    {
+      "name": "dhd",
+      "url": "https://github.com/dhd78"
+    }
+  ],
   "keywords": [
     "dsh",
     "deepseek-harness",
@@ -31,6 +41,7 @@
     "locale/*.json",
     "icon.svg",
     "README.md",
+    "AI-DISCLOSURE.md",
     "详细说明.md",
     "CHANGELOG.md",
     "LICENSE",
