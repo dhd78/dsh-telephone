@@ -1,0 +1,65 @@
+name: release
+
+# 打 tag（v*）即触发：校验 tag=版本 → 打源码 zip → SHA256SUMS → GitHub Release。
+# npm 发布单独做（npm publish --provenance），不把 npm token 放进这个 workflow。
+# 权限只有 contents: write。
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check tag matches package.json version
+        run: |
+          set -euo pipefail
+          tag="${GITHUB_REF_NAME#v}"
+          pkg="$(node -e "process.stdout.write(require('./package.json').version)")"
+          echo "tag=$tag package=$pkg"
+          if [ "$tag" != "$pkg" ]; then
+            echo "::error::tag ($tag) 与 package.json version ($pkg) 不一致"
+            exit 1
+          fi
+
+      - name: Smoke test
+        run: |
+          set -euo pipefail
+          DSH_HOME="$(mktemp -d)" node test/phone-smoke.mjs
+
+      - name: Build source archive
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          git archive --format=zip \
+            --prefix="dsh-telephone-${GITHUB_REF_NAME}/" \
+            -o "dist/dsh-telephone-${GITHUB_REF_NAME}.zip" HEAD
+
+      - name: Checksums
+        run: |
+          set -euo pipefail
+          cd dist
+          sha256sum ./*.zip > SHA256SUMS
+          cat SHA256SUMS
+
+      - name: Publish GitHub Release (draft)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          # 默认 draft：tag 推送只准备 Release，业主确认后再手动 Publish。
+          gh release create "$GITHUB_REF_NAME" \
+            dist/*.zip dist/SHA256SUMS \
+            --title "$GITHUB_REF_NAME" \
+            --notes-file CHANGELOG.md \
+            --verify-tag \
+            --draft

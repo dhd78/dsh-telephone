@@ -1,0 +1,18 @@
+# Local state, logs and build output must never be committed or published.
+node_modules/
+dist/
+build/
+out/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+
+# dsh-telephone runtime state lives in %DSH_HOME%/telephone/, not in the repo.
+# Extra guards in case someone points DSH_HOME inside the checkout:
+telephone/state.json
+telephone/audit.jsonl
+state.json
+audit.jsonl

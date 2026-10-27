@@ -1,0 +1,64 @@
+{
+  "name": "dsh-telephone",
+  "version": "0.1.7",
+  "description": "电话：让 DSH 会话像住户一样互相打电话、专线计数、配额与可视化电话簿",
+  "license": "MIT",
+  "author": "榫卯（07-插件制作师）",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "dsh-plugin",
+    "telephone",
+    "session",
+    "agent-teams"
+  ],
+  "type": "module",
+  "main": "./index.js",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./icon": "./icon.svg",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "详细说明.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "LICENSE.dsh-session-bus",
+    "SECURITY.md",
+    "docs/screenshots"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhd78/dsh-telephone.git"
+  },
+  "homepage": "https://github.com/dhd78/dsh-telephone#readme",
+  "bugs": {
+    "url": "https://github.com/dhd78/dsh-telephone/issues"
+  },
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.1-rc.3 <0.3.0-0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  }
+}
