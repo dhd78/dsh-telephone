@@ -33,6 +33,19 @@
 
 其他截图（离线可唤醒开关）见 `docs/screenshots/`。
 
+### 把住户加入电话簿
+
+![把住户加入电话簿](docs/screenshots/08-add-to-phonebook.png)
+
+先展开「电话簿 / 住户映射」：
+
+1. 找到要接入的会话，点「加入电话簿」；
+2. 点「+ 配额」分配这个会话的「新建专线次数」；
+3. 回到上方电话图，从一个节点拖线到另一个节点，建立允许互打的连线；
+4. 只有电话簿内、且画了连线的会话才能互相呼叫。
+
+> 电话簿默认不会把陌生会话画进电话图，避免误拨；只给彼此信任的会话接线。别名可以改成住户名或 A/B/C。
+
 ## English
 
 `dsh-telephone` is a switchboard for DeepSeek Harness sessions. The owner draws which sessions may call each other and grants "new line" quotas; an agent can then wake another session with a short call (≤100 characters), while task details travel through the existing mailbox. Calls are wake-up only; a line has a max call count and closes after 60 minutes of inactivity. Transport is derived from `dsh-session-bus` 0.4.0 (MIT). No network access; state stays local under `%DSH_HOME%/telephone/`.
