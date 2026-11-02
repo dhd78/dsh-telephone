@@ -9,9 +9,3 @@
 *.png binary
 *.svg text
 *.ico binary
-
-# Release zip is the user-facing package; tests and CI files stay in the repo.
-test export-ignore
-.github export-ignore
-.gitignore export-ignore
-.gitattributes export-ignore
