@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Virtual Phone & Mailbox System",
+    "description": "Cross-session calls and per-resident mailboxes: phonebook nodes get a mailbox, mail needs no line, calls still do; priority, DND, dedupe, receipts."
+  }
+}

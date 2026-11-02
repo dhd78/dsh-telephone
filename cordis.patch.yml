@@ -1,0 +1,7 @@
+# dsh-telephone bundle patch
+#
+# The package carries its own patch because it is distributed as a bundle.
+# The row id is stable; the profile may override config on the same id.
+- insert:
+    - id: telephone
+      name: 'dsh-telephone'

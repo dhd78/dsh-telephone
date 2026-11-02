@@ -1,0 +1,17 @@
+# Normalize line endings: repository and release archives use LF.
+* text=auto eol=lf
+
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+*.zip binary
+*.png binary
+*.svg text
+*.ico binary
+
+# Release zip is the user-facing package; tests and CI files stay in the repo.
+test export-ignore
+.github export-ignore
+.gitignore export-ignore
+.gitattributes export-ignore
