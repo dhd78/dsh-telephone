@@ -47,11 +47,7 @@
 
 ### 方式 B：npm
 
-```powershell
-pnpm add dsh-telephone@0.3.0
-```
-
-或用插件管理器 `install_bundle` 指向包名 `dsh-telephone`。npm 包与 GitHub Release 内容一致；以 registry 实际版本为准。
+**暂未发布。** npm 账号的 2FA/Passkey 无法完成，本次只通过 GitHub Release 分发；上面的方式 A 就是当前安装方式。以后恢复 npm 发布时，会另发版本并在 Release notes 说明。
 
 ## 从 0.1.x / 0.2.x 升级
 
