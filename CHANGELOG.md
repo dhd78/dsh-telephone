@@ -5,6 +5,7 @@
 - 更名显示为「虚拟电话和邮箱系统」（内部包名仍为 `dsh-telephone`，兼容旧安装与工具名）。
 - 电话簿节点自动分配稳定邮箱：`%DSH_HOME%/telephone/mailboxes/<mailboxId>/`；移出电话簿时归档。
 - 新增 `phone_mailbox_list` / `phone_mailbox_read` / `phone_mailbox_send`；投信不要求电话线，只要求双方在电话簿。
+- 投信防刷上限：同一 sender → 同一 target 每小时最多 **1000 封**。
 - 邮箱正文只落文件，不进 `state.json`、审计或电话封套；Agent 只能读自己的邮箱。
 - `phone_call` 新增 `priority`（urgent/normal/low）、`dedupeKey`、`ttlMs`、`delivery=quiet`、`letterId`。
 - 新增业主静默（全局时段 / 单节点 / 每小时上限）；被抑制的呼叫标 `suppressed`，不消耗专线配额。
