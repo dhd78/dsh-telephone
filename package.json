@@ -50,7 +50,9 @@
     "THIRD_PARTY_NOTICES.md",
     "LICENSE.dsh-session-bus",
     "SECURITY.md",
-    "docs/screenshots"
+    "docs/screenshots",
+    "docs/TESTING.md",
+    "docs/DEVELOPING.md"
   ],
   "repository": {
     "type": "git",
