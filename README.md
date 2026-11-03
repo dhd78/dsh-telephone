@@ -15,6 +15,10 @@
 - 已归档会话不进入电话簿、可呼叫或可投信列表；
 - 兼容旧工具名和 `/api/telephone-v10`。
 
+## 视频
+
+[Bilibili 演示视频：dsh-telephone 0.3.0](https://www.bilibili.com/video/BV1fJ4A6gEEW)
+
 ## 兼容性
 
 - DSH：`0.2.1-rc.3`（`engines.dsh` 有范围；更老版本未回归）
